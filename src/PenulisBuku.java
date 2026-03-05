@@ -5,7 +5,7 @@ public class PenulisBuku {
     String namaSemua[];
 
     public PenulisBuku() {
-        this.namaPenulis = "-";
+        this.namaPenulis = null;
     }
 
     public PenulisBuku(String nama) {
@@ -17,7 +17,11 @@ public class PenulisBuku {
         System.arraycopy(nama, 0, this.namaSemua, 0, nama.length);
     }
     void display() {
-        System.out.println("Penulis : " + this.namaPenulis + "\n");
+        if(this.namaPenulis != null){
+            System.out.println("Penulis : " + this.namaPenulis + "\n");
+        }else if(this.namaSemua.length != 0){
+            this.displayArr();
+        }
     }
     void displayArr() {
         System.out.print("Penulis : ");
